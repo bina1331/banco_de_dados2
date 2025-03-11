@@ -1,4 +1,12 @@
--- Aula do dia 11/03/2025
--- Professor Molina
 
--- Comando SELECT com WHERE CUSTOMIZADO 
+-- COMANDO PARA SELECIONAR TODOS 
+-- OS REGISTROS DA TABELA MÉDICOS 
+SELECT *
+FROM medicos;
+
+SELECT *
+FROM medicos
+WHERE codm = 3;
+
+SELECT nome, idade
+FROM medicos;
