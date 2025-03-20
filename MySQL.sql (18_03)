@@ -1,0 +1,75 @@
+use clinica;
+
+SELECT *
+FROM medicos;
+--------------------------------------------
+-- SELECIONAR ESPECIFICANDO
+SELECT DISTINCT especialidade
+FROM medicos;
+--------------------------------------------
+-- Exemplos de count
+SELECT count(*)
+FROM medicos;
+
+SELECT count(*)
+FROM medicos
+WHERE especialidade = 'ortopedia'
+--------------------------------------------
+-- MAXIMO
+SELECT max(idade)
+FROM medicos;
+--------------------------------------------
+-- MINIMO
+SELECT min(idade)
+FROM medicos;
+--------------------------------------------
+-- MEDIA
+SELECT avg(idade)
+FROM medicos;
+--------------------------------------------
+-- SELECIONAR NOME E IDADE
+SELECT nome, idade
+FROM medicos;
+--------------------------------------------
+-- ORDENAR
+SELECT nome,idade
+FROM medicos
+ORDER BY idade;
+
+-- DESC
+SELECT nome,idade
+FROM medicos
+ORDER BY idade DESC;
+-------------------------------------------- 
+-- 'M%' SELECIONA TUDO QUE COMEÇA COM M
+SELECT count(*)
+FROM medicos
+WHERE nome LIKE 'M%'
+-- '%M' SELECIONA TUDO QUE TERMINA COM M
+SELECT count(*)
+FROM medicos
+WHERE nome LIKE '%M'
+-- '%M%' SELECIONA TUDO QUE TEM M NO MEIO
+SELECT count(*)
+FROM medicos
+WHERE nome LIKE '%M%'
+-------------------------------------------- 
+-- SELECIONAR ENTRE 
+SELECT *
+FROM medicos
+WHERE idade BETWEEN 30 AND 40;
+
+SELECT *
+FROM medicos 
+WHERE idade >= 30 AND idade <= 40;
+-------------------------------------------- 
+-- EXEMPLOS DE IN, SELECIONA SUBCONJUNTOS
+SELECT *
+FROM medicos
+WHERE especialidade in ('ortopedia','neurologia');
+
+SELECT * 
+FROM medicos 
+WHERE especialidade = 'ortopedia' or 
+      especialidade = 'neurologia';
+-------------------------------------------- 
